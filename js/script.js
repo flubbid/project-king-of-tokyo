@@ -10,7 +10,7 @@
 
 
 
-
+// potatoes
 //This function will generate the random number for the dice rolls.
 class Game{
 constructor(){
