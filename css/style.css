@@ -54,3 +54,6 @@ header {
 .keep{
     background: red;
 }
+.dead{
+    background: red!important;
+}

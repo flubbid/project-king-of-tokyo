@@ -16,17 +16,28 @@
 class Game{
     constructor(){
         this.counter = 0
-        this.health = 10
-        this.vp = 0
-        this.energy = 0
-        this.loc = 0
         this.activeUser = 1
+        this.deadPlayer = []
+       
+       //this handles changing turns of the players 
         document.querySelector('#endTurn').addEventListener('click', () => {
-            var newPlayer = this.activeUser + 1;
-            if (newPlayer === 5){
-                newPlayer = 1
+            
+            //this checks the index's of the current players to see if they are still active in the game.
+            var allPlayers = [1, 2, 3, 4]
+            allPlayers = allPlayers.filter(player => this.deadPlayer.indexOf(player) === -1)
+
+            var indexOfCurrentPlayer = allPlayers.indexOf(this.activeUser)
+            if(indexOfCurrentPlayer === allPlayers.length - 1){
+                indexOfCurrentPlayer = 0
+            } else {
+                indexOfCurrentPlayer ++;
             }
-            this.playerTurn(newPlayer);
+            
+            // var newPlayer = this.activeUser + 1;
+            // if (newPlayer === 5){
+            //     newPlayer = 1
+            // } 
+            this.playerTurn(allPlayers[indexOfCurrentPlayer]);
         })
         document.querySelector('#roll').addEventListener('click',() => {
             this.counter ++;
@@ -324,13 +335,31 @@ playerTurn (id){
     $('.dieHold:not(.keep) > .dice').text("0");
 
     this.showUserData();
+    
+    //these check to see if the players health is 0, and then pushs the number into the deadplayer array, and will then change the background to red
+    if(user1.health <= 0){
+        this.deadPlayer.push(1);
+        $("#1").addClass("dead")
+    }
+    if (user2.health <= 0) {
+        this.deadPlayer.push(2);
+        $("#2").addClass("dead")
+    }
+    if (user3.health <= 0) {
+        this.deadPlayer.push(3);
+        $("#3").addClass("dead")
+    }
+    if (user4.health <= 0) {
+        this.deadPlayer.push(4);
+        $("#4").addClass("dead")
+    }
 }
 }
 var newGame = new Game();
 
 class User {
     constructor (id){
-        this.health = 5
+        this.health = 10
         this.energy = 0
         this.vP = 0
         this.id = id
