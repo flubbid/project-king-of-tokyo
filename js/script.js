@@ -1,17 +1,5 @@
 
 
-
-// State Variables----------------------
-
-// const turns = 3;
-// Event Listeners---------------------
-
-
-// Functions----------------------
-
-
-
-// potatoes
 //This function will generate the random number for the dice rolls.
 class Game {
     constructor() {
@@ -33,10 +21,7 @@ class Game {
                 indexOfCurrentPlayer++;
             }
 
-            // var newPlayer = this.activeUser + 1;
-            // if (newPlayer === 5){
-            //     newPlayer = 1
-            // } 
+            
             this.playerTurn(allPlayers[indexOfCurrentPlayer]);
         })
         document.querySelector('#roll').addEventListener('click', () => {
@@ -330,13 +315,13 @@ class Game {
             var extraPoint = handleVP3.length - 3
             this.addVpPoint(extraPoint)
         }
-        console.log("vp", user1.vP, user2.vP, user3.vP, user4.vP)
+        
 
         // this checks the dives for the elements 
         dices.filter(element => element === "E").forEach(e => {
             this.addEnergy()
         })
-        console.log("energy", user1.energy, user2.energy, user3.energy, user4.energy)
+        
         dices.filter(element => element === "H").forEach(e => {
             this.addHealth()
         })
@@ -359,7 +344,7 @@ class Game {
         dices.filter(element => element === "A").forEach(e => {
             this.handleAttack()
         })
-        console.log("health", user1.health, user2.health, user3.health, user4.health)
+        
 
         //this is checking the health of the player inside of tokyo, to see if he lose health and add ap promp to leave and then switchs the location to tokyo of the user who does the damage 
 
@@ -389,7 +374,7 @@ class Game {
                 }
             }
         }
-        console.log("loc", user1.loc, user2.loc, user3.loc, user4.loc)
+        
 
         //If I have more than 3 in the array then it needs to 
         var allPlayers = document.querySelectorAll('.player')
