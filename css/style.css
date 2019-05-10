@@ -140,3 +140,8 @@ article{
     font-size: 25px;
 }
 
+h1{
+    background: black;
+    color: white;
+    margin: 5px;
+}
