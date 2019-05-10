@@ -5,6 +5,10 @@ html, * {
 
 body {
   height: 100vh;
+  background-image: url(../img/godzilla2014_fanart_godzilla_attacks.jpg);
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -124,4 +128,18 @@ header {
 
 .dice_energy{
     background-image: url('/img/diceEnergy.jpg');
+}
+article{
+    font-weight: 800;
+    background-color: rgba(204, 198, 198, 0.377);
+    
+}
+h1{
+    font-size: 40px;
+    margin-top: 5px;
+    background-color: rgba(8, 8, 8, 0.959);
+    color: white;
+}
+.username{
+    font-size: 25px;
 }

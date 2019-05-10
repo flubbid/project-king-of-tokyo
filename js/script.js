@@ -352,7 +352,6 @@ class Game {
             if (confirm(`Player ${userInTokyo.id} you have taken ${userInTokyoHealth - userInTokyo.health} damage! Do you want to leave tokyo?`)) {
                 userInTokyo.loc = 2
 
-                console.log(this.activeUser, userInTokyo);
 
                 switch (this.activeUser) {
                     case 1: {
@@ -382,7 +381,7 @@ class Game {
             allPlayers[i].style.background = "none";
         }
         this.activeUser = id;
-        document.getElementById(id).style.background = "yellow";
+        document.getElementById(id).style.background = "rgba(255, 255, 19, 0.637)";
         this.counter = 0;
         $('.dieHold').removeClass('keep');
 
