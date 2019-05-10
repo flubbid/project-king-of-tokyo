@@ -28,6 +28,12 @@ section {
     /* align-items: left; */
     padding: 10px;
 }
+
+section:last-of-type{
+    margin-right: 1rem;
+}
+
+
 button {
     background: none;
     border: 3px solid black;
@@ -51,6 +57,71 @@ header {
     padding: 30px;
     border: 3px solid black;
 }
+
+#container{
+    display: flex;
+    justify-content: center;
+}
+#container > article {
+    padding: 30px;
+    border: 3px solid black;
+}
 .keep{
-    background: red;
+   border: 3px solid red; 
+}
+.dead{
+    background: red!important;
+}
+
+
+
+.health:before{
+    content: 'Health: ';
+    font-size: .85rem;
+}
+
+.vp:before{
+    content: 'VP: ';
+    font-size: .85rem;
+}
+
+.loc:before{
+    content: 'Location: ';
+    font-size: .85rem;
+}
+
+.energy:before{
+    content: 'Energy: ';
+    font-size: .85rem;
+}
+
+.dice{
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    color: transparent;
+}
+
+.dice_1{
+    background-image: url('/img/dice1.jpg');
+}
+
+.dice_2{
+    background-image: url('/img/dice2.jpg');
+}
+
+.dice_3{
+    background-image: url('/img/dice3.jpg');
+}
+
+.dice_attack{
+    background-image: url('/img/diceAttack.jpg');
+}
+
+.dice_health{
+    background-image: url('/img/diceHealth.jpg');
+}
+
+.dice_energy{
+    background-image: url('/img/diceEnergy.jpg');
 }
