@@ -107,27 +107,27 @@ header {
 }
 
 .dice_1{
-    background-image: url('/img/dice1.jpg');
+    background-image: url('../img/dice1.jpg');
 }
 
 .dice_2{
-    background-image: url('/img/dice2.jpg');
+    background-image: url('../img/dice2.jpg');
 }
 
 .dice_3{
-    background-image: url('/img/dice3.jpg');
+    background-image: url('../img/dice3.jpg');
 }
 
 .dice_attack{
-    background-image: url('/img/diceAttack.jpg');
+    background-image: url('../img/diceAttack.jpg');
 }
 
 .dice_health{
-    background-image: url('/img/diceHealth.jpg');
+    background-image: url('../img/diceHealth.jpg');
 }
 
 .dice_energy{
-    background-image: url('/img/diceEnergy.jpg');
+    background-image: url('../img/diceEnergy.jpg');
 }
 article{
     font-weight: 800;
