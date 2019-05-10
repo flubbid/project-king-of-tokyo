@@ -403,26 +403,82 @@ class Game {
 
         this.handleDiceChanges(1, 1, 1, 1, 1, 1); // reset all dices to 1
 
-        this.showUserData();
-
         //these check to see if the players health is 0, and then pushs the number into the deadplayer array, and will then change the background to red
         if (user1.health <= 0) {
             this.deadPlayer.push(1);
-            $("#1").addClass("dead")
+            $("#1").addClass("dead");
+
+            user1.loc = 2;
+
+            var newUser = [1, 2, 3, 4].filter(v => this.deadPlayer.indexOf(v) === -1)[0];
+
+            if (newUser === 1) {
+                user1.loc = 1;
+            } else if (newUser === 2) {
+                user2.loc = 1;
+            } else if (newUser === 3) {
+                user3.loc = 1;
+            } else if (newUser === 4) {
+                user4.loc = 1;
+            }
         }
         if (user2.health <= 0) {
             this.deadPlayer.push(2);
             $("#2").addClass("dead")
+
+            user2.loc = 2;
+
+            var newUser = [1, 2, 3, 4].filter(v => this.deadPlayer.indexOf(v) === -1)[0];
+
+            if (newUser === 1) {
+                user1.loc = 1;
+            } else if (newUser === 2) {
+                user2.loc = 1;
+            } else if (newUser === 3) {
+                user3.loc = 1;
+            } else if (newUser === 4) {
+                user4.loc = 1;
+            }
         }
         if (user3.health <= 0) {
             this.deadPlayer.push(3);
             $("#3").addClass("dead")
+
+            user3.loc = 2;
+
+            var newUser = [1, 2, 3, 4].filter(v => this.deadPlayer.indexOf(v) === -1)[0];
+
+            if (newUser === 1) {
+                user1.loc = 1;
+            } else if (newUser === 2) {
+                user2.loc = 1;
+            } else if (newUser === 3) {
+                user3.loc = 1;
+            } else if (newUser === 4) {
+                user4.loc = 1;
+            }
         }
         if (user4.health <= 0) {
             this.deadPlayer.push(4);
             $("#4").addClass("dead")
+
+            user4.loc = 2;
+
+            var newUser = [1, 2, 3, 4].filter(v => this.deadPlayer.indexOf(v) === -1)[0];
+
+            if (newUser === 1) {
+                user1.loc = 1;
+            } else if (newUser === 2) {
+                user2.loc = 1;
+            } else if (newUser === 3) {
+                user3.loc = 1;
+            } else if (newUser === 4) {
+                user4.loc = 1;
+            }
         }
-        if (this.deadPlayer.length === 3) {
+
+        var dealPlayers = this.deadPlayer.filter((x, i, a) => a.indexOf(x) == i);
+        if (dealPlayers.length >= 3) {
             if (this.deadPlayer.indexOf(1) === -1) {
                 alert('User #1 is a winner.');
             }
@@ -439,6 +495,9 @@ class Game {
                 alert('User #4 is a winner.');
             }
         }
+        this.showUserData();
+
+
     }
 }
 var newGame = new Game();
